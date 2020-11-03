@@ -3,6 +3,7 @@
   r = await fetch('https://api.github.com/users/redbrain/repos');
   j = await r.json();
   u = [];
+  p = [];
   document.write('<h1><a href="https://git.io/redbrain">git.io/redbrain</a></h1><hr>');
   j.forEach( (repo) => {
     if (repo.has_pages) {
@@ -11,7 +12,7 @@
   });
   document.write('<hr>')
   u.forEach( (repo) => {
-    document.write(`<p><a href="${repo.html_url}">${repo.full_name}</a> - ${repo.description}</p>`);
+    if (!repo.description.includes('nq')) document.write(`<p><a href="${repo.html_url}">${repo.full_name}</a> - ${repo.description}</p>`);
   });
 })();
 </script>
