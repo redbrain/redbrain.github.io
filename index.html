@@ -1,8 +1,0 @@
-<script>
-(async function () {
-r = await fetch('https://api.github.com/users/redbrain/repos');
-j = await r.json();
-j.forEach((repo)=>{
-document.write(`<p><a href="${repo.html_url}">${repo.full_name}</a> - ${repo.description}</p>`);
-})})();
-</script>
