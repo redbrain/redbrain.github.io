@@ -4,7 +4,7 @@
   j = await r.json();
   u = [];
   p = [];
-  document.write('<h1><a href="https://git.io/redbrain">git.io/redbrain</a></h1><hr>');
+  document.write('<h1>redbrain</h1><em>just a list of my repos. my other things can be found at <a href="https://git.io/redbrain">git.io/redbrain</a>.</em><hr>');
   j.forEach( (repo) => {
     if (repo.has_pages) {
       document.write(`<p><a href="/${repo.name}">${repo.full_name}</a> - ${repo.description}</p>`);
