@@ -1,8 +1,17 @@
 <script>
 (async function () {
-r = await fetch('https://api.github.com/users/redbrain/repos');
-j = await r.json();
-j.forEach((repo)=>{
-document.write(`<p><a href="${repo.has_pages ? `https://redbrain.github.io/${repo.name}` : repo.html_url}">${repo.full_name}</a> - ${repo.description}</p>`);
-})})();
+  r = await fetch('https://api.github.com/users/redbrain/repos');
+  j = await r.json();
+  u = [];
+  document.write('<h1><a href="https://git.io/redbrain">git.io/redbrain</a></h1><hr>');
+  j.forEach( (repo) => {
+    if (repo.has_pages) {
+      document.write(`<p><a href="/${repo.name}">${repo.full_name}</a> - ${repo.description}</p>`);
+    } else {u.push(repo)}
+  });
+  document.write('<hr>')
+  u.forEach( (repo) => {
+    document.write(`<p><a href="${repo.html_url}">${repo.full_name}</a> - ${repo.description}</p>`);
+  });
+})();
 </script>
