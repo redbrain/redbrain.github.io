@@ -1,2 +1,1 @@
-# redbrain.github.io
-my gh page. not sure what i'll put here.
+# [redbrain.github.io](https://redbrain.github.io)
