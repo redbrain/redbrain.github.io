@@ -1,20 +1,18 @@
-<style>html{background:#222;color:#CCC;font-family:sans-serif}</style><h1>loading...</h1>
+<style>body{background:#22272E;color:#ADBAC7}</style><h1>loading...</h1>
 <script>
 (async function () {
   r = await fetch('https://api.github.com/users/redbrain/repos');
   j = await r.json();
   u = [];
   p = [];
-  document.write("<style>html{background:#222;color:#CCC;font-family:sans-serif}a{color:inherit}</style><h1>redbrain's repo directory</h1><hr>");
-  j.forEach( (repo) => {
+  document.write("<style>body{max-width:900px;margin:auto;background:#22272E;color:#ADBAC7;font-family:monospace}a{color:inherit}</style><h1><br>redbrain | repo directory</h1><hr>");
+  j.forEach(repo => {
     if (repo.has_pages) {
       document.write(`<p><a href="/${repo.name}">${repo.full_name}</a> - ${repo.description}</p>`);
     } else {u.push(repo)}
   });
   document.write('<hr>');
-  u.forEach( (repo) => {
-    if (!repo.description.includes('nq')) document.write(`<p><a href="${repo.html_url}">${repo.full_name}</a> - ${repo.description}</p>`);
-  });
+  u.forEach(repo => document.write(`<p><a href="${repo.html_url}">${repo.full_name}</a> - ${repo.description}</p>`);
   document.write('<hr><h1>see also: <a href="https://git.io/redbrain">git.io/redbrain</a></h1>');
 })();
 </script>
